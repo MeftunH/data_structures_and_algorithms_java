@@ -23,6 +23,7 @@ public class List {
 
         //M
         LinkedList<String> linkedList = new LinkedList<String>();
+
         //LinkedList's one element have 3 parts. It has a element's address, a pointer to the next element and a pointer to the previous element.
 
         //[prev element next] ----------> <----------[prev element next] ----------> <---------[prev element next]
@@ -31,6 +32,14 @@ public class List {
         //we have only head's address. we can traverse the list from head to tail.
         //O(N) searhcing
         //o(!) insertion
+
+        linkedList.add("example");
+        if (linkedList.contains("example")) {
+            System.out.println("example is in the list");
+        }
+        else {
+            System.out.println("example is not in the list");
+        }
     }
 
 }
