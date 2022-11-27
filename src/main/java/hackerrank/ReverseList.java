@@ -17,7 +17,7 @@ public class ReverseList {
         if (temp!=null) {
             list = temp.getPrev();
         }
-        return current;
+        return list;
 
     }
 }
