@@ -1,12 +1,9 @@
 package hackerrank;
 
 public class ReverseList {
-    public static void main(String[] args) {
-
-    }
     public static DoublyLinkedListNode reverse(DoublyLinkedListNode list) {
     DoublyLinkedListNode current = list;
-    DoublyLinkedListNode temp;
+    DoublyLinkedListNode temp = null;
     //1<=>2<=>3<=>4<=>5
     //5>=>4>=>3>=>2>=>1
         while(current!=null) {
@@ -14,7 +11,13 @@ public class ReverseList {
             current.setPrev(current.getNext());
             current.setNext(current.prev);
             current.setNext(temp);
+            current = temp;
+            current = current.getPrev();
         }
-        return list;
+        if (temp!=null) {
+            list = temp.getPrev();
+        }
+        return current;
+
     }
 }
