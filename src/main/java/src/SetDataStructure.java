@@ -1,6 +1,7 @@
 package src;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class SetDataStructure {
@@ -15,7 +16,14 @@ public class SetDataStructure {
         //contains chekc if the element is in the set. It does not check if the element is in the list.
         set.add("example2");
 
+        ;
         set.forEach(s-> System.out.println(s));
+
+        Iterator<String> iterator = set.iterator();
+
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 
 }
