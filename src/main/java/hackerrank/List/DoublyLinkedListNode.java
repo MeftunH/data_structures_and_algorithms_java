@@ -1,6 +1,4 @@
-package hackerrank;
-
-import java.util.LinkedList;
+package hackerrank.List;
 
 public class DoublyLinkedListNode {
     public DoublyLinkedListNode prev;

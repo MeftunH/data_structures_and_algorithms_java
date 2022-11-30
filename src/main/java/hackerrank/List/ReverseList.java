@@ -1,4 +1,6 @@
-package hackerrank;
+package hackerrank.List;
+
+import hackerrank.List.DoublyLinkedListNode;
 
 public class ReverseList {
     public static DoublyLinkedListNode reverse(DoublyLinkedListNode list) {
