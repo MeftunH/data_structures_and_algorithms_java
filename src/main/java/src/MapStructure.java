@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Map;
 import java.util.TreeMap;
 
 public class MapStructure {
@@ -13,5 +14,9 @@ public class MapStructure {
         System.out.println(tm.get("John"));
         System.out.println(tm.firstKey());
         System.out.println(tm.lastEntry());
+
+        for (Map.Entry<String,Integer> entry: tm.entrySet()) {
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
     }
 }
