@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class List {
+public class ListStructure {
     public static void main(String[] args) {
         //array is a static data structure. It has a fixed size.
         int array[] = new int[3];
