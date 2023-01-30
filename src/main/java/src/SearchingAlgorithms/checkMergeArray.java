@@ -1,4 +1,4 @@
-package src;
+package src.SearchingAlgorithms;
 
 class checkMergeArray {
 

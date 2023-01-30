@@ -1,4 +1,4 @@
-package src;
+package src.SearchingAlgorithms;
 
 class BST_class {
     //node class that defines BST node

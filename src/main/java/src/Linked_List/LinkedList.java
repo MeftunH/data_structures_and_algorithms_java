@@ -1,8 +1,11 @@
-package src;
+package src.Linked_List;
 
 public class LinkedList {
 
     Node head; // head of list
+
+    public void add(String deneme_verisi) {
+    }
 
     // Linked list Node.
     // This inner class is made static
