@@ -1,4 +1,4 @@
-package src.Linked_List;
+package src.Linked_List.song;
 /* @author - Maftun Hashimli (maftunhashimli@gmail.com)) */
 
 public class Playlist {
