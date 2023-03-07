@@ -12,6 +12,7 @@ public class ReverseString {
         }
         System.out.println(rstr);
         byConcat();
+        byCharArray();
     }
 
     public static void byConcat(){
@@ -21,6 +22,15 @@ public class ReverseString {
         str.charAt(0);
         for (int i=len-1; i>=0; i--) {
             rev=rev+str.charAt(i);
+        }
+        System.out.println(rev);
+    }
+    public static void byCharArray(){
+        String str="CHAR";
+        String rev="";
+        char a[]=str.toCharArray();
+        for (int i=0; i<a.length; i++) {
+            rev=rev+a[i];
         }
         System.out.println(rev);
     }
