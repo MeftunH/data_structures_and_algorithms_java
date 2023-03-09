@@ -1,4 +1,4 @@
-package src.Set;
+package src.ds.Set;
 
 import java.util.HashSet;
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package src.Map;
+package src.ds.Map;
 
 import java.util.Map;
 import java.util.TreeMap;

@@ -1,4 +1,4 @@
-package src.Queue;
+package src.ds.Queue;
 
 import java.util.Iterator;
 import java.util.PriorityQueue;

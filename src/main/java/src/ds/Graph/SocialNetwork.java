@@ -1,4 +1,4 @@
-package src.Graph;
+package src.ds.Graph;
 /* @author - Maftun Hashimli (maftunhashimli@gmail.com)) */
 
 import java.util.ArrayList;

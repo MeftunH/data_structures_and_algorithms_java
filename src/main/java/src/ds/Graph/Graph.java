@@ -1,6 +1,4 @@
-package src.Graph;
-
-import src.Graph.Node;
+package src.ds.Graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;

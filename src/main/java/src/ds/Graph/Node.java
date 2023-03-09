@@ -1,4 +1,4 @@
-package src.Graph;
+package src.ds.Graph;
 
 class Node
 {

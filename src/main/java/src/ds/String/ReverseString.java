@@ -1,4 +1,4 @@
-package src.String;
+package src.ds.String;
 /* @author - Maftun Hashimli (maftunhashimli@gmail.com)) */
 
 public class ReverseString {

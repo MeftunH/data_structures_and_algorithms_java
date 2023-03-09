@@ -1,4 +1,4 @@
-package src.Linked_List;
+package src.ds.Linked_List;
 /* @author - Maftun Hashimli (maftunhashimli@gmail.com)) */
 
 public class AdvancedLinkedList {

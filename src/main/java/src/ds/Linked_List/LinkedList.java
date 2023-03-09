@@ -1,4 +1,4 @@
-package src.Linked_List;
+package src.ds.Linked_List;
 
 public class LinkedList {
 
