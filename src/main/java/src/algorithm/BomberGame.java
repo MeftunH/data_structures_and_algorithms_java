@@ -135,10 +135,24 @@ public class BomberGame extends JPanel implements KeyListener {
     public void keyTyped(KeyEvent e) {
 
     }
-
-    @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            playerX -= SPEED;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            playerX += SPEED;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_UP) {
+            playerY -= SPEED;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            playerY += SPEED;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_SPACE && !bombPlaced) {
+            bombX = playerX + PLAYER_SIZE / 2 - BOMB_SIZE / 2;
+            bombY = playerY + PLAYER_SIZE / 2 - BOMB_SIZE / 2;
+            bombPlaced = true;
+        }
     }
 
     @Override
