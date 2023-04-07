@@ -131,10 +131,6 @@ public class BomberGame extends JPanel implements KeyListener {
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             playerX -= SPEED;
@@ -155,8 +151,15 @@ public class BomberGame extends JPanel implements KeyListener {
         }
     }
 
-    @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {}
 
+    public void keyReleased(KeyEvent e) {}
+    public static void main(String[] args) throws InterruptedException {
+        BomberGame game = new BomberGame();
+        while (true) {
+            game.update();
+            game.repaint();
+            Thread.sleep(10);
+        }
     }
 }
