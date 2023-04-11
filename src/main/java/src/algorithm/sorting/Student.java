@@ -24,6 +24,10 @@ public class Student implements Comparable<Student> {
                 }));
     }
 
+    public static void sortByName(List<Student> students) {
+        Collections.sort(students);
+    }
+
     public int compareTo(Student that) {
         return name.compareTo(that.name);
     }
