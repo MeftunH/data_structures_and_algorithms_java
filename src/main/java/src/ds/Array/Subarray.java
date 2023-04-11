@@ -132,4 +132,35 @@ public class Subarray {
         }
         return topStudent;
     }
+
+    public List<Integer> findAllSubstrings(String s, List<String> words) {
+        List<Integer> result=new ArrayList<>();
+        if (words.isEmpty()) {
+            return result;
+        }
+        Map<String, Integer> wordCount=new HashMap<>();
+        for (String word : words) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0)+1);
+        }
+        int numWords=words.size();
+        int wordLen=words.get(0).length();
+        for (int i=0; i+numWords*wordLen<=s.length(); i++) {
+            Map<String, Integer> currCount=new HashMap<>();
+            int j;
+            for (j=0; j<numWords; j++) {
+                String word=s.substring(i+j*wordLen, i+j*wordLen+wordLen);
+                if (!wordCount.containsKey(word)) {
+                    break;
+                }
+                currCount.put(word, currCount.getOrDefault(word, 0)+1);
+                if (currCount.get(word)>wordCount.get(word)) {
+                    break;
+                }
+            }
+            if (j==numWords) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
 }
