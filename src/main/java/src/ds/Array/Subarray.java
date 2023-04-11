@@ -1,10 +1,7 @@
 package src.ds.Array;
 /* @author - Maftun Hashimli (maftunhashimli@gmail.com)) */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Subarray {
     // Represent subarray by starting and ending indices, inclusive.
@@ -106,5 +103,33 @@ public class Subarray {
             }
         }
         return new Subarray(longestRangeStart, longestRangeStart+longestRangeLength-1);
+    }
+
+    public String findStudentWithHighestBestOfThreeScores(Iterator<Object> nameScoreData) {
+        Map<String, PriorityQueue<Integer>> studentScores=new HashMap<>();
+        while (nameScoreData.hasNext()) {
+            String name=(String) nameScoreData.next();
+            int score=(Integer) nameScoreData.next();
+            if (!studentScores.containsKey(name)) {
+                studentScores.put(name, new PriorityQueue<>(3));
+            }
+            PriorityQueue<Integer> scores=studentScores.get(name);
+            scores.add(score);
+            if (scores.size()>3) {
+                scores.poll();
+            }
+        }
+        String topStudent="";
+        double topAverage=0.0;
+        for (Map.Entry<String, PriorityQueue<Integer>> studentScore : studentScores.entrySet()) {
+            String student=studentScore.getKey();
+            PriorityQueue<Integer> scores=studentScore.getValue();
+            double average=(scores.poll()+scores.poll()+scores.poll())/3.0;
+            if (average>topAverage) {
+                topAverage=average;
+                topStudent=student;
+            }
+        }
+        return topStudent;
     }
 }
