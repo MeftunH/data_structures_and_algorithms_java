@@ -79,4 +79,32 @@ public class Subarray {
         result=Math.max(result, A.size()-longestDupFreeSubarrayStartldx);
         return result;
     }
+
+    public Subarray longestContainedRange(List<Integer> A) {
+        Map<Integer, Boolean> isPresent=new HashMap<>();
+        for (Integer a : A) {
+            isPresent.put(a, false);
+        }
+        int longestRangeStart=0, longestRangeLength=0;
+        for (Integer a : A) {
+            if (isPresent.get(a)) {
+                continue;
+            }
+            isPresent.put(a, true);
+            int leftldx=a-1, rightldx=a+1;
+            while (isPresent.containsKey(leftldx)) {
+                isPresent.put(leftldx, true);
+                --leftldx;
+            }
+            while (isPresent.containsKey(rightldx)) {
+                isPresent.put(rightldx, true);
+                ++rightldx;
+            }
+            if (longestRangeLength<rightldx-leftldx-1) {
+                longestRangeLength=rightldx-leftldx-1;
+                longestRangeStart=leftldx+1;
+            }
+        }
+        return new Subarray(longestRangeStart, longestRangeStart+longestRangeLength-1);
+    }
 }
