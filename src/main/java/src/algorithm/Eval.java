@@ -55,4 +55,40 @@ public class Eval {
         }
         return leftChars.isEmpty();
     }
+
+    public static String shortestEquivalentPath(String path) {
+        if (path.isEmpty()) {
+            throw new IllegalArgumentException("Empty string is not a valid path.");
+        }
+        Deque<String> pathNames=new LinkedList<>();
+        // Special case: starts with "/", which is an absolute path.
+        if (path.startsWith("/")) {
+            pathNames.addFirst("/");
+        }
+        for (String token : path.split("/")) {
+            if (token.isEmpty()||token.equals(".")) {
+                continue;
+            } else if (token.equals("..")) {
+                if (pathNames.isEmpty()||pathNames.peekFirst().equals("..")) {
+                    pathNames.addFirst(token);
+                } else {
+                    if (pathNames.peekFirst().equals("/")) {
+                        throw new IllegalArgumentException("Path error, trying to go above root.");
+                    }
+                    pathNames.removeFirst();
+                }
+            } else { // Must be a name.
+                pathNames.addFirst(token);
+            }
+        }
+        StringBuilder result=new StringBuilder();
+        if (!pathNames.isEmpty()) {
+            final String dir=pathNames.removeFirst();
+            result.append(dir);
+        }
+        while (!pathNames.isEmpty()) {
+            result.append("/").append(pathNames.removeFirst());
+        }
+        return result.toString();
+    }
 }
