@@ -59,6 +59,14 @@ public class ArrayExamples {
         System.out.println("Sum = "+sum);
         System.out.println("Average = "+average);
 
+        //Multidimensional Arrays
+
+        //In Java, we can create multidimensional arrays. For example, we can create a two-dimensional array that can store 10 rows and 30 columns.
+        double[][] arrayDouble=new double[10][30];
+
+        double[][] matrix={{1.2, 4.3, 4.0},
+                {4.1, -1.1}
+        };
 
     }
 
